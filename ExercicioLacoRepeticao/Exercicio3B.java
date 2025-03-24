@@ -8,9 +8,8 @@ public class Exercicio3B {
             if (a % 3 == 0) {
 
                 System.out.println(a);
-                a++;
-
             }
+            a++;
         }
 
     }
