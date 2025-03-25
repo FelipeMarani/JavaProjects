@@ -59,12 +59,13 @@ public class Exercicio1_4d {
         System.out.println("Nome do titular: \n" + conta01.Titular);
         System.out.println("Tipo de conta: \n"+ conta01.type.getDescricao());
 
-        System.out.print("Deseja realizar o primeiro depósito?: [1]Sim, [2] Não");
+        System.out.print("Deseja realizar o primeiro depósito?: [1]Sim, [2] Não :");
         int option = tcdScanner.nextInt();
         if (option == 1) {
             System.out.print("Quanto deseja depositar?: ");
             double dep = tcdScanner.nextDouble();
             conta01.saldo = dep;
+            System.out.printf("Saldo atual: R$%.2f", conta01.saldo);
         }
         else{
             System.out.println("Ok, obrigado por acessar o nosso banco!");
