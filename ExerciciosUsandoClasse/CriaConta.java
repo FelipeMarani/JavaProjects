@@ -33,7 +33,7 @@ public class CriaConta {
                     break;
                 }
                 else{
-                    int agencia = new int[4];
+                    int[] agencia = new int[4];
                     
                 }
                 
