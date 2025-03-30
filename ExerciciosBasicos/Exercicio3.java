@@ -22,6 +22,9 @@ public class Exercicio3 {
         System.out.printf("%,.2f", media);
         
 
+        tcdScanner.close();
+        
+
     }
 
 }

@@ -19,6 +19,8 @@ public class Exercicio2 {
         System.out.printf("%s, você possui %d anos  tem %,.2fcm", name,year,high);
         System.out.println("");
 
+        tcdScanner.close();
+
     }
 
 }

@@ -14,6 +14,8 @@ public class Exercicio5 {
 
         System.out.printf("A temperatura %,.2f° em fahrenheit é de %,.2f°", Celsius, fahrenheit);
 
+
+        tcdScanner.close();
     }
 
 }

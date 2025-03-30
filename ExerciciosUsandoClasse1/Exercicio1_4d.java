@@ -70,7 +70,7 @@ public class Exercicio1_4d {
         else{
             System.out.println("Ok, obrigado por acessar o nosso banco!");
         }
-
+        tcdScanner.close();
     }
 
 }

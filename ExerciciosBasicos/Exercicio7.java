@@ -19,6 +19,8 @@ public class Exercicio7 {
             System.out.println("O número digitado " + num + " é ímpar");
         }
 
+        tcdScanner.close();
+
     }
 
 }

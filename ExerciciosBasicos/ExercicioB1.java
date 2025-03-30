@@ -16,6 +16,8 @@ public class ExercicioB1 {
 
         System.out.printf("Você possuí %d anos e  %d meses", age, mes);
 
+
+        tcdcScanner.close();
     }
 
 }

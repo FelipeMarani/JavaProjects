@@ -19,6 +19,7 @@ public class Exercicio4 {
 
         System.out.printf("A área do triângulo é de: %,.2f",area);
 
+        tcdScanner.close();
     }
 
 }

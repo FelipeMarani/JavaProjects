@@ -1,7 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
 public class Exercicio2 {
 
     enum TipoConta {
@@ -42,6 +41,7 @@ public class Exercicio2 {
         }
     }
 
+
     public static void main(String[] args) {
 
         Scanner tcdScanner = new Scanner(System.in);
@@ -53,7 +53,7 @@ public class Exercicio2 {
         conta01.Titular = "Felipe Jesus da Silva";
         conta01.birthday = "23/04/2005";
         conta01.cpf = "493.488.888-89";
-        conta01.type = TipoConta.Corrente;
+        // conta01.type = TipoConta.Investimento;
 
         System.out.println("Conta criada com sucesso!!\n");
         System.out.println("Nome do titular: \n" + conta01.Titular);
@@ -69,6 +69,8 @@ public class Exercicio2 {
         } else {
             System.out.println("Ok, obrigado por acessar o nosso banco!");
         }
+
+        tcdScanner.close();
 
     }
 

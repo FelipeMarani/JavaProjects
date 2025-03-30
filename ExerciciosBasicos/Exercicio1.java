@@ -14,6 +14,8 @@ public class Exercicio1 {
 
         System.out.print(sobrenome + " ");
         System.out.println(nome);
+
+        Scannertcd.close();
         
 
     }

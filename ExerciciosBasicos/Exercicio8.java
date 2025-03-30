@@ -18,6 +18,8 @@ public class Exercicio8 {
             System.out.println("O ano de " + year + " não foi, ou não será bissexto");
         }
 
+
+        tcdScanner.close();
     }
 
 }

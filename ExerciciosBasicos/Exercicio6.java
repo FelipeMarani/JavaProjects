@@ -27,6 +27,8 @@ public class Exercicio6 {
             System.out.println("O valor de "+ n2 +" é maior que "+n1);
         }
 
+        tcdScanner.close();
+
     }
 
 }
