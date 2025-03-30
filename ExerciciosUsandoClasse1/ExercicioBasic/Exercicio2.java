@@ -64,6 +64,15 @@ public class Exercicio2 {
         if (option == 1) {
             int a = 1;
             while (a == 1) {
+                System.out.println("Digite o valor do depósito: ");
+                double dep = tcdScanner.nextDouble();
+                if (dep > 0) {
+                    conta01.depositar(dep);
+                    System.out.println("Deseja realizar outro depósito?: [1]Sim, [2] Não :");
+                    a = tcdScanner.nextInt();
+                } else {
+                    System.out.println("Não é possível depositar valores menores que 0");
+                }
 
             }
         } else {
