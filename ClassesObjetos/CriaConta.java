@@ -31,17 +31,13 @@ public class CriaConta {
                     System.out.println("Apenas maiores de 17 podem estar criando a conta");
                     System.out.println("Operação cancelada!");
                     break;
-                }
-                else{
+                } else {
                     int[] agencia = new int[4];
-                    
+
                 }
-                
-                // nConta.Titular
 
             }
-            
+
         }
-
-
+    }
 }

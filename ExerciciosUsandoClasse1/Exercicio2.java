@@ -47,7 +47,7 @@ public class Exercicio2 {
         Scanner tcdScanner = new Scanner(System.in);
 
         Conta conta01 = new Conta();
-        conta01.id = 0001;
+        conta01.id = 1;
         conta01.name = "Felipe";
         conta01.idade = 20;
         conta01.Titular = "Felipe Jesus da Silva";
@@ -57,18 +57,16 @@ public class Exercicio2 {
 
         System.out.println("Conta criada com sucesso!!\n");
         System.out.println("Nome do titular: \n" + conta01.Titular);
-        System.out.println("Tipo de conta: \n"+ conta01.type.getDescricao());
+        System.out.println("Tipo de conta: \n" + conta01.type.getDescricao());
 
         System.out.print("Deseja realizar o primeiro depósito?: [1]Sim, [2] Não :");
         int option = tcdScanner.nextInt();
         if (option == 1) {
             int a = 1;
             while (a == 1) {
-                
-                
+
             }
-        }
-        else{
+        } else {
             System.out.println("Ok, obrigado por acessar o nosso banco!");
         }
 
