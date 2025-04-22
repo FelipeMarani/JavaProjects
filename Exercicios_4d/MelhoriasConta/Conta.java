@@ -34,4 +34,18 @@ public class Conta {
         }
 
     }
+
+    void transferir(double value, Conta contaDestino) {
+        if (value <= 0) {
+            System.out.println("Valor inválido para transferência!");
+        } else if (value > this.saldo) {
+            System.out.println("Impossível realizar transferência, saldo insuficiente!!");
+            System.out.println("Saldo: " + saldo + " R$");
+        } else {
+            this.saldo -= value;
+            contaDestino.depositar(value);
+            System.out.println("Transferência realizada com sucesso!!");
+            System.out.println("Seu saldo atual: " + saldo + " R$");
+        }
+    }
 }
