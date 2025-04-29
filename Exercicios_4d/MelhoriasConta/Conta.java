@@ -45,7 +45,7 @@ public class Conta {
             this.saldo -= value;
             contaDestino.depositar(value);
             System.out.println("Transferência realizada com sucesso!!");
-            System.out.println("Seu saldo atual: " + saldo + " R$");
+            // System.out.println("Seu saldo atual: " + saldo + " R$");
         }
     }
 }
