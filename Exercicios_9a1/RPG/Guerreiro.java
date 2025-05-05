@@ -1,6 +1,6 @@
 package RPG;
 
-public class Guerreiro extends Personagem{
+public class Guerreiro extends Personagem {
 
     private String name;
     private int damage;
@@ -39,7 +39,8 @@ public class Guerreiro extends Personagem{
         this.rank = rank;
     }
 
-    public Guerreiro(String name, int damage, int durability, int rank) {
+    public Guerreiro(String nameGuerreiro, int level, int xp, String name, int damage, int durability, int rank) {
+        super(nameGuerreiro, level, xp);
         this.name = name;
         this.rank = rank;
         if (damage < 0 || damage > 10) {

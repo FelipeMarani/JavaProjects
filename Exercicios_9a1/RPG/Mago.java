@@ -39,7 +39,8 @@ public class Mago extends Personagem{
         this.custMana = custMana;
     }
 
-    public Mago(String magic, int rank, int damage, int custMana) {
+    public Mago(String nameMago, int level, int xp, String magic, int rank, int damage, int custMana) {
+        super(nameMago, level, xp);
         this.magic = magic;
         this.rank = rank;
         if (damage < 0 || damage > 10) {

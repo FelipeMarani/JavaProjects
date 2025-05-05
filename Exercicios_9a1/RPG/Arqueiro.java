@@ -39,7 +39,8 @@ public class Arqueiro extends Personagem{
         this.rank = rank;
     }
 
-    public Arqueiro(String name, int damage, int durability, int rank) {
+    public Arqueiro(String nameArqueiro, int level, int xp, String name, int damage, int durability, int rank) {
+        super(nameArqueiro, level, xp);
         this.name = name;
         this.rank = rank;
         if (damage < 0 || damage > 10) {

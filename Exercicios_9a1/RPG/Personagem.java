@@ -29,6 +29,14 @@ public class Personagem {
     public void setXp(int xp) {
         this.xp = xp;
     }
+
+    public Personagem(String name, int level, int xp) {
+        this.name = name;
+        this.level = level;
+        this.xp = xp;
+    }
+
+    
     
     
 
