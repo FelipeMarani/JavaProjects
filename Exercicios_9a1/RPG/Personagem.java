@@ -36,8 +36,27 @@ public class Personagem {
         this.xp = xp;
     }
 
-    
-    
-    
+    public void Atacar(Guerreiro guerreiro) {
+        System.out.println("O guerreiro " + guerreiro.getName() + " esta atacando com a "
+                + guerreiro.getArma() + " e causou um total de "
+                + guerreiro.getDamage() + " dano.");
+
+    }
+
+    public void Atacar(Arqueiro arqueiro) {
+        System.out.println("O arqueiro " + arqueiro.getName() + " esta atacando com a "
+                + arqueiro.getArco() + " e causou um total de "
+                + arqueiro.getDamage() + " dano.");
+
+    }
+
+    public void Atacar(Mago mago) {
+
+        System.out.println("O mago " + mago.getName() + " esta atacando com a "
+                + mago.getMagic() + " usou um total de "
+                + mago.getCustMana() + " mana e causou "
+                + mago.getDamage() + " de dano.");
+
+    }
 
 }

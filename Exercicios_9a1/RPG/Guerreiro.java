@@ -2,17 +2,17 @@ package RPG;
 
 public class Guerreiro extends Personagem {
 
-    private String name;
+    private String arma;
     private int damage;
     private int durability;
     private int rank;
 
-    public String getName() {
-        return name;
+    public String getArma() {
+        return arma;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setArma(String name) {
+        this.arma = name;
     }
 
     public int getDamage() {
@@ -39,9 +39,9 @@ public class Guerreiro extends Personagem {
         this.rank = rank;
     }
 
-    public Guerreiro(String nameGuerreiro, int level, int xp, String name, int damage, int durability, int rank) {
-        super(nameGuerreiro, level, xp);
-        this.name = name;
+    public Guerreiro(String name, int level, int xp, String arma, int damage, int durability, int rank) {
+        super(name, level, xp);
+        this.arma = arma;
         this.rank = rank;
         if (damage < 0 || damage > 10) {
             System.out.println("Dano de arma inválido: Dano referencial 0~10.");
