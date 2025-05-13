@@ -2,7 +2,7 @@ public class teste {
 
     public static void main(String[] args) {
         
-        Conta conta0001 = new Conta();
+        // Conta conta0001 = new Conta();
 
         // conta0001.nome = "Felipe Jesus da Silva";
         // conta0001.ttNome = "Felipe";

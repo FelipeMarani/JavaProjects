@@ -2,7 +2,6 @@ public final class Produto {
     
     private String desc;
     private Double value;
-    pr
 
     public String getDesc() {
         return desc;
