@@ -1,4 +1,4 @@
-package Pizzaria;
+package pizzaria;
 abstract  class Pizza{
 
    private int qtd;
@@ -32,6 +32,13 @@ abstract  class Pizza{
    }
 
    abstract String preparar();
+
+   public Pizza(int qtd, String sabor, String tamanho){
+      this.qtd = qtd;
+      this.sabor = sabor;
+      this.tamanho = tamanho;
+
+   }
 
     
     
