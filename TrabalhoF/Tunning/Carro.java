@@ -1,6 +1,6 @@
-package Mecanica;
+package Tunning;
 
-public class Moto extends Veiculo {
+public class Carro extends Veiculo {
 
     private String marca;
     private String modelo;
@@ -39,7 +39,7 @@ public class Moto extends Veiculo {
         this.potencia = potencia;
     }
 
-    public Moto(String mc, String mod, int ano, String pt, String cor, String placa, String tpCombustivel,
+    public Carro(String mc, String mod, int ano, String pt, String cor, String placa, String tpCombustivel,
             String defeito) {
 
         super(cor, placa, tpCombustivel, defeito);
@@ -47,7 +47,6 @@ public class Moto extends Veiculo {
         this.modelo = mod;
         this.ano = ano;
         this.potencia = pt;
-
     }
 
 }

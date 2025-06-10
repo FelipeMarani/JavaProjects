@@ -1,4 +1,4 @@
-package Mecanica;
+package Tunning;
 
 public class Gerente {
 
