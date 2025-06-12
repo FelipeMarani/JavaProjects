@@ -39,4 +39,11 @@ public class Cliente {
         this.email = email;
     }
 
+    public Cliente(String nome, String cpf, String telefone, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+    }
+
 }

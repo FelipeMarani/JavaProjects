@@ -2,10 +2,13 @@ package Tunning;
 
 public class Carro extends Modificacoes {
 
+    private Cliente dono;
     private String marca;
     private String modelo;
     private int ano;
     private int potencia;
+    private int velocidadeMaxima;
+    private double zeroToCem;
 
     public String getMarca() {
         return marca;
@@ -39,109 +42,83 @@ public class Carro extends Modificacoes {
         this.potencia = potencia;
     }
 
-    public Carro(String mc, String mod, int ano, int pt, int tpBodyKt, int tpRodas, int tpTmRodas, int tpFunilaria,
-            int tpTunning, double tpRtKit, int tpOffR, double custoModificacao) {
+    public int getVelocidadeMaxima() {
+        return velocidadeMaxima;
+    }
 
-        super(tpBodyKt, tpRodas, tpTmRodas, tpFunilaria, tpTunning, tpRtKit, tpOffR, custoModificacao);
+    public void setVelocidadeMaxima(int velocidadeMaxima) {
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public double getZeroToCem() {
+        return zeroToCem;
+    }
+
+    public void setZeroToCem(double zeroToCem) {
+        this.zeroToCem = zeroToCem;
+    }
+
+    public Cliente getDono() {
+        return dono;
+    }
+
+    public void setDono(Cliente dono) {
+        this.dono = dono;
+    }
+
+    public Carro(Cliente dono, String mc, String mod, int ano, int pt, int tpBodyKt, int tpRodas, int tpTmRodas,
+            int tpFunilaria,
+            int tpTunning, double custoModificacao) {
+
+        super(tpBodyKt, tpRodas, tpTmRodas, tpFunilaria, tpTunning, custoModificacao);
         this.marca = mc;
         this.modelo = mod;
         this.ano = ano;
         this.potencia = pt;
+        this.dono = dono;
     }
 
-    @Override
-    public String modificar() {
+    public void ResultadoTunning() {
 
-        double valor = 0;
-        String stRoda = "Roda Original";
-        String stBodykit;
-        String stFunilaria;
-        String stTunning;
-
-        if (getTipoRodas() == 1) {
-            stRoda = "Rodas de liga leve";
-            if (getTamanhoRodas() <= 16) {
-                valor = 2781;
-                setCustoModificacao(valor);
-            } else if (getTamanhoRodas() > 16 && getTamanhoRodas() <= 20) {
-                valor = 8949;
-                setCustoModificacao(valor);
-            } else if (getTamanhoRodas() > 20 && getTamanhoRodas() <= 24) {
-                valor = 9358.5;
-                setCustoModificacao(valor);
-            } else {
-                System.out.println("Tamanho de rodas não definido ou inválido.");
-                stRoda = "Roda Original";
-                return "Tamanho de rodas não definido ou inválido.";
+        ResultadoTunning result = modificar();
+        int velocidadeMaximaF = 0;
+        this.potencia += result.getPtExtra();
+        this.zeroToCem -= result.getZeroToCem();
+        int ptTotal = this.potencia;
+        if(getZeroToCem() < 1.89 ){
+            this.zeroToCem = 1.89; // Valor mínimo para zeroToCem
+        }
+        if (ptTotal <= 450) {
+            velocidadeMaximaF = (int) (ptTotal * 0.25);
+            if (velocidadeMaximaF > 400) {
+                velocidadeMaximaF = 399;
             }
-        } else if (getTipoRodas() == 2) {
-            stRoda = "Roda Forjada";
-            if (getTamanhoRodas() >= 20 && getTamanhoRodas() <= 24) {
-                valor = 40263;
-                setCustoModificacao(valor);
-            } else {
-                System.out.println("Tamanho de rodas não definido ou inválido.");
-                stRoda = "Roda Original";
-                return "Tamanho de rodas não definido ou inválido.";
+        } else if (ptTotal >= 450) {
+            velocidadeMaximaF = (int) (ptTotal * 0.15);
+            if (velocidadeMaximaF > 400) {
+                velocidadeMaximaF = 399;
             }
         }
+        this.velocidadeMaxima += velocidadeMaximaF + result.getVelocidadeMaxima();
 
-        if (getTipoBodyKit() == 1) {
-            stBodykit = "Body Kit Esportivo";
-            valor += 15562;
-            setCustoModificacao(valor);
-        } else if (getTipoBodyKit() == 2) {
-            stBodykit = "Body Kit Agressivo";
-            valor += 23343;
-            setCustoModificacao(valor);
-        } else if (getTipoBodyKit() == 3) {
-            stBodykit = "Body Kit Elegante";
-            valor += 18674.4;
-            setCustoModificacao(valor);
-        } else if (getTipoBodyKit() == 4) {
-            stBodykit = "Body Kit Retro";
-            valor += 21786.8;
-            setCustoModificacao(valor);
-        } else {
-            System.out.println("Tipo de Body Kit não definido ou inválido.");
-            return "Tipo de Body Kit não definido ou inválido.";
-        }
+        System.out.println("Cliente: " + this.getDono().getNome());
+        System.out.println("CPF: " + this.getDono().getCpf());
+        System.out.println("Telefone: " + this.getDono().getTelefone());
+        System.out.println("Email: " + this.getDono().getEmail());
 
-        if (getTipoFunilaria() == 1) {
-            stFunilaria = "Funilaria padrão";
-            valor += 3500;
-            setCustoModificacao(valor);
-        } else if (getTipoFunilaria() == 2) {
-            stFunilaria = "Funilaria Esportiva";
-            valor += 3850;
-            setCustoModificacao(valor);
-        } else if (getTipoFunilaria() == 3) {
-            stFunilaria = "Funilaria classica";
-            valor += 4620;
-            setCustoModificacao(valor);
-        } else if (getTipoFunilaria() == 4) {
-            stFunilaria = "Funilaria personalizada";
-            valor += 6930;
-            setCustoModificacao(valor);
-        } else {
-            System.out.println("Tipo de Funilaria não definido ou inválido.");
-            return "Tipo de Funilaria não definido ou inválido.";
-        }
-
-        String modificacao = "Marca: " + marca + "\n" +
-                "Modelo: " + modelo + "\n" +
-                "Ano: " + ano + "\n" +
-                "Potência: " + potencia + "\n" +
-                "Tipo Body Kit: " + stBodykit + "\n" +
-                "Tipo Rodas: " + stRoda + "\n" +
-                "Tamanho Rodas: " + getTamanhoRodas() + "\n" +
-                "Tipo Funilaria: " + stFunilaria + "\n" +
-                "Tipo Tunning: " + getTipoTunning() + "\n" +
-                "Retrofit Kit: " + getTipoRetrokit() + "\n" +
-                "Off Road Kit: " + getTipoOffRoadkit() + "\n" +
-                "Custo da Modificação: R$" + getCustoModificacao();
-
-        return modificacao;
+        System.out.println("Resultado da Modificação:");
+        System.out.println("Marca: " + this.marca);
+        System.out.println("Modelo: " + this.modelo);
+        System.out.println("Ano: " + this.ano);
+        System.out.println("Potência: " + this.potencia + " cv");
+        System.out.println("Velocidade Máxima: " + this.velocidadeMaxima + " km/h");
+        System.out.println("Aceleração 0 a 100: " + this.zeroToCem + " segundos");
+        System.out.println("Body Kit: " + getTipoBodyKit());
+        System.out.println("Rodas: " + getTipoRodas());
+        System.out.println("Tamanho das Rodas: " + getTamanhoRodas() + " polegadas");
+        System.out.println("Funilaria: " + getTipoFunilaria());
+        System.out.println("Tunning: " + getTipoTunning());
+        System.out.println("Custo da Modificação: R$ " + getCustoModificacao());
 
     }
 
