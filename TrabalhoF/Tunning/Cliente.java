@@ -1,5 +1,6 @@
 package Tunning;
 
+// class Cliente representa um cliente que possui um carro
 public class Cliente {
 
     private String nome;

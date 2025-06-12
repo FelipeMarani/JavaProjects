@@ -1,5 +1,6 @@
 package Tunning;
 
+// Classe Modificacoes representa as modificações que podem ser feitas em um carro
 abstract class Modificacoes {
 
     private int tipoBodyKit;
@@ -61,6 +62,7 @@ abstract class Modificacoes {
         this.tamanhoRodas = tamanhoRodas;
     }
 
+    // Construtor para inicializar todos os atributos de Modificacoes
     public Modificacoes(int tipoBodyKit, int tipoRodas, int tamanhoRodas, int tipoFunilaria, int tipoTunning,
             double custoModificacao) {
 
@@ -72,8 +74,9 @@ abstract class Modificacoes {
         this.custoModificacao = custoModificacao;
     }
 
-    public ResultadoTunning modificar() {
+    public ResultadoTunning modificar() {// Método para modificar o carro e retornar o resultado do tunning
 
+        // Variáveis para armazenar os resultados da modificação
         double valor = 0;
         int ptExtra = 0;
         double zeroToCem = 0;
@@ -83,6 +86,7 @@ abstract class Modificacoes {
         String stFunilaria;
         String stTunning;
 
+        // Inicialização da lógica de modificação
         if (getTipoRodas() == 1) {
             zeroToCem -= 0.5;
             velocidadeMaxima += 5;
@@ -214,9 +218,10 @@ abstract class Modificacoes {
             stTunning = "Tipo de Tunning não definido ou inválido.";
             System.out.println("Tipo de Tunning não definido ou inválido.");
         }
-        setCustoModificacao(valor);
+        setCustoModificacao(valor); // Atualiza o custo total da modificação
 
-        return new ResultadoTunning(ptExtra, zeroToCem, velocidadeMaxima);
+        return new ResultadoTunning(ptExtra, zeroToCem, velocidadeMaxima); // Retorna um novo objeto ResultadoTunning
+                                                                           // com os resultados da modificação
 
     }
 }

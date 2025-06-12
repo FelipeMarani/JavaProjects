@@ -1,5 +1,6 @@
 package Tunning;
 
+//class ResultadoTunning representa o resultado de um processo de tunning de um carro
 public class ResultadoTunning {
 
     private int ptExtra;
@@ -30,7 +31,7 @@ public class ResultadoTunning {
         this.velocidadeMaxima = velocidadeMaxima;
     }
 
-    public ResultadoTunning(int ptExtra, double zeroToCem, int velocidadeMaxima) {
+    public ResultadoTunning(int ptExtra, double zeroToCem, int velocidadeMaxima) { // Construtor para inicializar os atributos de ResultadoTunning
 
         this.ptExtra = ptExtra;
         this.zeroToCem = zeroToCem;

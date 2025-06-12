@@ -1,5 +1,6 @@
 package Tunning;
 
+// Classe Carro representa um carro que pode ser modificado
 public class Carro extends Modificacoes {
 
     private Cliente dono;
@@ -66,6 +67,7 @@ public class Carro extends Modificacoes {
         this.dono = dono;
     }
 
+    // Construtor da classe Carro
     public Carro(Cliente dono, String mc, String mod, int ano, int pt, int tpBodyKt, int tpRodas, int tpTmRodas,
             int tpFunilaria,
             int tpTunning, double custoModificacao) {
@@ -78,6 +80,7 @@ public class Carro extends Modificacoes {
         this.dono = dono;
     }
 
+    // Método para modificar o carro e exibir o resultado do tunning
     public void ResultadoTunning() {
 
         ResultadoTunning result = modificar();
@@ -85,21 +88,18 @@ public class Carro extends Modificacoes {
         this.potencia += result.getPtExtra();
         this.zeroToCem -= result.getZeroToCem();
         int ptTotal = this.potencia;
-        if(getZeroToCem() < 1.89 ){
+        if(getZeroToCem() < 1.89 ){// Se o zeroToCem for menor que 1.89, ajusta para 1.89
             this.zeroToCem = 1.89; // Valor mínimo para zeroToCem
         }
-        if (ptTotal <= 450) {
+        if (ptTotal <= 450) {// Se a potência total for menor ou igual a 450
             velocidadeMaximaF = (int) (ptTotal * 0.25);
-            if (velocidadeMaximaF > 400) {
-                velocidadeMaximaF = 399;
-            }
         } else if (ptTotal >= 450) {
             velocidadeMaximaF = (int) (ptTotal * 0.15);
-            if (velocidadeMaximaF > 400) {
-                velocidadeMaximaF = 399;
-            }
         }
         this.velocidadeMaxima += velocidadeMaximaF + result.getVelocidadeMaxima();
+        if (this.velocidadeMaxima > 400) {
+            this.velocidadeMaxima = 399; // Limita a velocidade máxima a 399 km/h
+        }
 
         System.out.println("Cliente: " + this.getDono().getNome());
         System.out.println("CPF: " + this.getDono().getCpf());
