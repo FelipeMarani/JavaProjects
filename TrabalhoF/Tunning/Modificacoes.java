@@ -1,3 +1,8 @@
+/*
+ * Definição da classe Modificacoes
+ * * @author Felipe Jesus
+ * @version 1.0
+ */
 package Tunning;
 
 // Classe Modificacoes representa as modificações que podem ser feitas em um carro
@@ -62,6 +67,11 @@ abstract class Modificacoes {
         this.tamanhoRodas = tamanhoRodas;
     }
 
+    /*
+     * Construtor para inicializar os atributos de Modificacoes
+     * @param Modificações definição dos atributos de tipoBodyKit, tipoRodas, tamanhoRodas, tipoFunilaria, tipoTunning e custoModificacao
+     */
+
     // Construtor para inicializar todos os atributos de Modificacoes
     public Modificacoes(int tipoBodyKit, int tipoRodas, int tamanhoRodas, int tipoFunilaria, int tipoTunning,
             double custoModificacao) {
@@ -73,6 +83,11 @@ abstract class Modificacoes {
         this.tipoTunning = tipoTunning;
         this.custoModificacao = custoModificacao;
     }
+
+    /*
+     * Método abstrato para modificar o carro e retornar o resultado do tunning
+     * @param modificar onde objeto carro é modificado e retorna o resultado do tunning
+     */
 
     public ResultadoTunning modificar() {// Método para modificar o carro e retornar o resultado do tunning
 

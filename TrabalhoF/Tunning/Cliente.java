@@ -1,3 +1,10 @@
+/*
+ * Definição da classe Cliente
+ * 
+ * @author Felipe Jesus
+ * 
+ */
+
 package Tunning;
 
 // class Cliente representa um cliente que possui um carro
@@ -40,6 +47,9 @@ public class Cliente {
         this.email = email;
     }
 
+    /* Construtor para inicializar os atributos de Cliente 
+     * @param cliente definição dos atributos de nome, cpf, telefone e email
+    */
     public Cliente(String nome, String cpf, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;

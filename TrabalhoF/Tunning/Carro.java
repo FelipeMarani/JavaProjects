@@ -1,3 +1,9 @@
+/* 
+ * Definição da classe Carro
+ * * @author Felipe Jesus
+ * @version 1.0
+ */
+
 package Tunning;
 
 // Classe Carro representa um carro que pode ser modificado
@@ -67,6 +73,11 @@ public class Carro extends Modificacoes {
         this.dono = dono;
     }
 
+    /*
+     * Construtor para inicializar os atributos de Carro
+     * @param Carro onde são definidos os atributos de dono, marca, modelo, ano, potência, velocidade máxima e aceleração de 0 a 100 km/h
+     */
+
     // Construtor da classe Carro
     public Carro(Cliente dono, String mc, String mod, int ano, int pt, int tpBodyKt, int tpRodas, int tpTmRodas,
             int tpFunilaria,
@@ -79,7 +90,10 @@ public class Carro extends Modificacoes {
         this.potencia = pt;
         this.dono = dono;
     }
-
+    /*
+     * Metodo para modificar o carro e retornar o resultado do tunning
+     * @return ResultadoTunning onde são definidos os atributos de potencia extra, tempo de 0 a 100 km/h e velocidade máxima
+     */
     // Método para modificar o carro e exibir o resultado do tunning
     public void ResultadoTunning() {
 
